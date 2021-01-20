@@ -1,34 +1,33 @@
 import assert, { AssertionError } from 'assert';
 import { getFiles } from '../src/lib/fileSystem/getFiles.mjs';
+import path from 'path';
 
 describe('Filesystem', () => {
     describe('Get Files:', () => {
-        it('should return the correct files', () => {
-            let dirname =
-                'C:\\Users\\shashi\\Documents\\SchoolVarshith\\fileManager\\test\\props\\filesystem';
-            let equal = getFiles(dirname);
+        it('should return the correct files', async () => {
+            let equal = await getFiles('./test/props/filesystem/');
             let expected = [
                 {
-                    fileName: 'nice.txt',
-                    type: 'text',
+                    fileName: 'emoji.png',
+                    type: 'png',
                     size: {
-                        amount: '1',
-                        unit: 'kb',
-                        full: '1 KB',
+                        amount: 142461,
+                        unit: 'B',
+                        full: '142461 B',
                     },
                 },
                 {
-                    fileName: 'emoji.png',
-                    type: 'Image (png)',
+                    fileName: 'nice.txt',
+                    type: 'txt',
                     size: {
-                        amount: '139',
-                        unit: 'kb',
-                        full: '139 KB',
+                        amount: 62,
+                        unit: 'B',
+                        full: '62 B',
                     },
                 },
             ];
 
-            assert.strictEqual(equal, expected);
+            assert.deepStrictEqual(equal, expected);
         });
         it('should throw the correct error when nothing is passed in', () => {
             try {
@@ -44,7 +43,7 @@ describe('Filesystem', () => {
 
                 assert.strictEqual(
                     e.message,
-                    "Capricorn: Argument is missing \n at getFiles(), filepath wasn't given"
+                    "Capricorn: Argument is missing at getFiles(), filepath wasn't given"
                 );
             }
         });
