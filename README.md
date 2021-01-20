@@ -1,6 +1,7 @@
 <img src="./public/capricorn.png">
 
 A highly customizable File Manager with blur and transparency. You can even make your own custom titlebar!
+Made with Svelte and Electron.
 
 ### Screenshot
 
