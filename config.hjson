@@ -1,8 +1,11 @@
 {
+    # blurType = acrylic (or) blurbehind
     "blurType": "acrylic",
+    # This is unnecessary if blurType != acrylic
     "acrylicOptions": {
         "theme": "light",
         "effect": "acrylic"
     },
+    # Must be a hex code (AARRGGBB i think)
     "backgroundColor": "#00000000"
 }

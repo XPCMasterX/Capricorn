@@ -25,6 +25,7 @@
         "electron-acrylic-window": "^0.5.5",
         "electron-reload": "^1.5.0",
         "glasstron": "0.0.7",
+        "hjson": "^3.2.2",
         "mocha": "^8.2.1",
         "process": "^0.11.10",
         "sirv-cli": "^1.0.0"

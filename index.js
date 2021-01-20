@@ -1,16 +1,24 @@
 require('electron-reload')(__dirname);
 
-const config = require('./config.json');
-console.log(typeof config.blurType);
 const { app, screen } = require('electron');
 const glasstron = require('glasstron');
 const os = require('os');
+const fs = require('fs').promises;
+const hjson = require('hjson');
 const { BrowserWindow } = require('electron-acrylic-window');
+
+async function getConfig() {
+    let result = await fs.readFile('./config.hjson', 'utf8');
+    result = hjson.parse(result);
+
+    return result;
+}
 
 app.commandLine.appendSwitch('enable-transparent-visuals');
 
-const createWindow = () => {
+const createWindow = async () => {
     const { width, height } = screen.getPrimaryDisplay().workAreaSize;
+    const config = await getConfig();
 
     if (config.blurType === 'acrylic') {
         window = new BrowserWindow({
@@ -28,8 +36,6 @@ const createWindow = () => {
                 effect: config.acrylicOptions.effect,
             },
         });
-
-        console.log('acrylic');
     } else {
         window = new glasstron.BrowserWindow({
             width: width / 1.25,
@@ -44,8 +50,6 @@ const createWindow = () => {
                 nodeIntegration: true,
             },
         });
-
-        console.log('blurbehind');
     }
 
     window.loadFile('public/index.html');
