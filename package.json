@@ -1,0 +1,31 @@
+{
+    "name": "svelte-app",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "rollup -c",
+        "dev": "rollup -c -w",
+        "start": "electron .",
+        "test": "mocha",
+        "ebuild": "electron-packager . Capricorn"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^16.0.0",
+        "@rollup/plugin-node-resolve": "^10.0.0",
+        "electron-packager": "^15.2.0",
+        "rollup": "^2.3.4",
+        "rollup-plugin-css-only": "^3.1.0",
+        "rollup-plugin-livereload": "^2.0.0",
+        "rollup-plugin-svelte": "^7.0.0",
+        "rollup-plugin-terser": "^7.0.0",
+        "sirv": "^1.0.10",
+        "svelte": "^3.0.0"
+    },
+    "dependencies": {
+        "electron": "^11.2.0",
+        "electron-reload": "^1.5.0",
+        "glasstron": "0.0.7",
+        "mocha": "^8.2.1",
+        "process": "^0.11.10",
+        "sirv-cli": "^1.0.0"
+    }
+}
