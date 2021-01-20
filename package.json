@@ -22,6 +22,7 @@
     },
     "dependencies": {
         "electron": "^11.2.0",
+        "electron-acrylic-window": "^0.5.5",
         "electron-reload": "^1.5.0",
         "glasstron": "0.0.7",
         "mocha": "^8.2.1",

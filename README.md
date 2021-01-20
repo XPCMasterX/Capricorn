@@ -7,9 +7,17 @@ A highly customizable File Manager with blur and transparency. You can even make
 Windows (with custom OSX like titlebar, blur type: blurbehind)
 <img src="./public/screenshots/windowsMacOStitleBar.png">
 
+Windows (with custom OSX like titlebar, blur type: acrylic)  
+Dark  
+<img src="./public/screenshots/windowsAcrylicDark.png">  
+Light  
+<img src="./public/screenshots/windowsAcrylicLight.png">
+
 ### Important
 
-Acrylic blur does not work on Windows, see [this issue](https://github.com/AryToNeX/Glasstron/issues/59#issuecomment-757432053). May implement in the future.
+~~Acrylic blur does not work on Windows, see [this issue](https://github.com/AryToNeX/Glasstron/issues/59#issuecomment-757432053). May implement in the future.~~
+
+Acrylic blur works!
 
 This is still a work in progress! Screenshots show how much progress has been made.
 
