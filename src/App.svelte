@@ -5,7 +5,4 @@
 
 <TitleBar title="Capricorn"/>
 
-<style>
-</style>
-
 <Files />
