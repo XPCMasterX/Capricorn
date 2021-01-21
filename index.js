@@ -52,6 +52,8 @@ const createWindow = async () => {
         });
     }
 
+    window.openDevTools();
+
     window.loadFile('public/index.html');
 };
 

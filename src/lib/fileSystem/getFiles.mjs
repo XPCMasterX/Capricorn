@@ -1,5 +1,4 @@
-import fs from 'fs';
-const files = fs.promises;
+const files = require('fs').promises;
 
 async function getFiles(directory) {
     if (!directory) {
