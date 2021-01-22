@@ -1,6 +1,11 @@
 <script>
     import {closeWindow, minimizeWindow, makeWindowFullScreen} from './lib/titleBar.mjs';
     export let title;
+
+    const remote = require('electron').remote;
+
+    let bounds = remote.getCurrentWindow().webContents.getOwnerBrowserWindow().getBounds();
+    console.log(bounds.height - 300 + 'px');
 </script>
 
 <div class="outerContainer">
@@ -24,6 +29,20 @@
     .closing {
         margin-left: 78%;
         display: inline-block;
+    }
+
+    @media (max-width: 1024px) {
+        .closing {
+            margin-left: 78%;
+            display: inline-block;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .closing {
+            margin-left: 89%;
+            display: inline-block;
+        }
     }
 
     .outerContainer {

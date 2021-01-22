@@ -4,5 +4,3 @@
 </script>
 
 <TitleBar title="Capricorn"/>
-
-<Files />
