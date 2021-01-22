@@ -1,40 +1,43 @@
 <script>
     import { getFiles } from '../lib/fileSystem/getFiles.mjs';
 
-    const data = getFiles('.');
+    let files;
 
-    function breakWords(sentence, maxChars) {
-        let letterArray = sentence.split('');
+    function createFileItems(item, parentClass) {
+        let canvas = document.createElement('canvas');
+        canvas.height = 100;
+        canvas.width = 100;
+
+
+        let ctx = canvas.getContext('2d');
+        // Temporary
+        ctx.fillStyle = '#0000003c';
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+        parentClass.append(canvas);
+
+        // I need this last bit or else there will be lots of undefineds
+        return '';
     }
 </script>
 
-<div class="container">
-    {#await data}
+<div class="container" bind:this={files}>
+    {#await getFiles('.')}
+        <p>Loading</p>
     {:then data}
+    <div class="canvas">
         {#each data as item}
-            <div style="text-align: center">
-                <button>{item.size.full}</button>
-                <p>{item.fileName}</p>
-            </div>
+
+                {createFileItems(item, files)}
 
         {/each}
+    </div>
     {/await}
 </div>
 
 <style>
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    button {
-        height: 75px;
-        width: 75px;
-        margin: -3px 5px;
-        display: inline-block;
-    }
 
-    p {
-        color: white;
-        word-wrap: break-word;
+    .canvas {
+        margin: 10px
     }
 </style>
