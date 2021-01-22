@@ -25,19 +25,8 @@
     {#await getFiles('.')}
         <p>Loading</p>
     {:then data}
-    <div class="canvas">
         {#each data as item}
-
                 {createFileItems(item, files)}
-
         {/each}
-    </div>
     {/await}
 </div>
-
-<style>
-
-    .canvas {
-        margin: 10px
-    }
-</style>
